@@ -1,0 +1,536 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --background: #06183d;
+    --background-light: #071630;
+
+    --card: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.12);
+
+    --text: #f5f7ff;
+    --muted: #aab5c9;
+
+    --blue: #4da6ff;
+    --red: #ff4d4d;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(4, 12, 28, 0.8);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Russo One", sans-serif;
+
+    color: white;
+
+    font-size: 1.4rem;
+
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--blue);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 150px 30px 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.intro {
+    color: var(--blue);
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: "Russo One", sans-serif;
+
+    font-size: clamp(4rem, 9vw, 7rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+h1 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px var(--blue);
+}
+
+.hero h2 {
+    margin-top: 30px;
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+}
+
+.description {
+    color: var(--muted);
+
+    max-width: 570px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: var(--blue);
+
+    color: #04101f;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 1px solid var(--border);
+
+    color: white;
+}
+
+.secondary:hover {
+    border-color: var(--blue);
+
+    color: var(--blue);
+}
+
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.profile-area {
+    width: 360px;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.blue-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: var(--blue);
+
+    filter: blur(100px);
+
+    opacity: 0.25;
+
+    top: 40px;
+    left: 30px;
+}
+
+.profile-card {
+    position: relative;
+
+    padding: 12px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    transform: rotate(3deg);
+
+    transition: 0.4s;
+}
+
+.profile-card:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+.profile-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 14px;
+}
+
+.profile-details {
+    padding: 15px 8px 5px;
+}
+
+.profile-details h3 {
+    font-family: "Russo One", sans-serif;
+
+    font-size: 1.2rem;
+}
+
+.profile-details p {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: var(--blue);
+
+    font-family: "Russo One", sans-serif;
+}
+
+.section-heading h2 {
+    font-family: "Russo One", sans-serif;
+
+    font-size: 2.5rem;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-text {
+    max-width: 800px;
+}
+
+.about-text p {
+    color: var(--muted);
+
+    margin-bottom: 20px;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--blue);
+}
+
+.skill-card > span {
+    color: var(--blue);
+
+    font-weight: 700;
+
+    font-size: 0.8rem;
+}
+
+.skill-card h3 {
+    margin-top: 15px;
+
+    font-size: 1.3rem;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    margin-top: 8px;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact .section-heading {
+    justify-content: center;
+}
+
+.contact > p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: var(--red);
+
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 140px;
+    }
+
+    .profile-area {
+        width: 320px;
+
+        align-self: center;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .profile-area {
+        width: 280px;
+    }
+}
